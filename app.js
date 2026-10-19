@@ -334,7 +334,7 @@ function initROICalculator(ferramentas) {
   calculate();
 }
 
-// 5. Vitrine Setup & Produtividade (Amazon + Mercado Livre Lado a Lado)
+// 5. Vitrine Setup & Produtividade (Com Fotos Reais + Botões Amazon e Mercado Livre)
 function initSetupShowcase(produtos) {
   const setupGrid = document.getElementById("setup-grid");
   if (!setupGrid || !produtos) return;
@@ -344,11 +344,18 @@ function initSetupShowcase(produtos) {
       (p) => `
     <article class="tool-card">
       <div>
-        <div class="card-top">
-          <div class="tool-icon">${p.icone}</div>
-          <span class="badge-featured">${p.tag}</span>
-        </div>
-        <h3>${p.nome}</h3>
+        ${
+          p.imagem
+            ? `<div style="width:100%; height:185px; border-radius:12px; overflow:hidden; margin-bottom:14px; position:relative; border:1px solid rgba(255,255,255,0.08);">
+                <img src="${p.imagem}" alt="${p.nome}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                <span class="badge-featured" style="position:absolute; top:10px; right:10px; background:rgba(7,9,19,0.85); backdrop-filter:blur(6px);">${p.tag}</span>
+              </div>`
+            : `<div class="card-top">
+                <div class="tool-icon">${p.icone}</div>
+                <span class="badge-featured">${p.tag}</span>
+              </div>`
+        }
+        <h3>${p.icone} ${p.nome}</h3>
         <div class="tool-meta">
           <span>📦 ${p.categoria}</span>
           <span>•</span>
