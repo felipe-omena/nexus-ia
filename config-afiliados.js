@@ -315,3 +315,14 @@ window.NEXUS_CONFIG = {
     }
   ]
 };
+
+// 🔒 TRAVA DE SEGURANÇA PROFUNDA (Impede adulteração de links em tempo de execução)
+(function deepFreeze(obj) {
+  if (obj && typeof obj === "object") {
+    Object.freeze(obj);
+    Object.keys(obj).forEach(function (key) {
+      deepFreeze(obj[key]);
+    });
+  }
+})(window.NEXUS_CONFIG);
+
