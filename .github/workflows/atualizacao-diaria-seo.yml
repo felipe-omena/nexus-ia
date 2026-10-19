@@ -1,0 +1,44 @@
+name: Atualizacao Diaria de SEO e Indexacao Automatica
+
+on:
+  schedule:
+    - cron: '0 11 * * *' # Executa todos os dias as 08:00 (Horario de Brasilia)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  seo-daily-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Atualizar lastmod do Sitemap para a data de hoje
+        run: |
+          TODAY=$(date -u +"%Y-%m-%d")
+          sed -i "s|<lastmod>.*</lastmod>|<lastmod>${TODAY}</lastmod>|g" sitemap.xml
+          git config user.name "Nexus IA SEO Bot"
+          git config user.email "actions@github.com"
+          if ! git diff --quiet sitemap.xml; then
+            git add sitemap.xml
+            git commit -m "chore(seo): atualizacao diaria automatica de indexacao (${TODAY})"
+            git push
+          fi
+
+      - name: Notificar Buscadores via Protocolo IndexNow (Bing, Yahoo, DuckDuckGo, ChatGPT Search)
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "felipe-omena.github.io",
+              "key": "nexusia2026indexnowkey8842",
+              "keyLocation": "https://felipe-omena.github.io/nexus-ia/nexusia2026indexnowkey8842.txt",
+              "urlList": [
+                "https://felipe-omena.github.io/nexus-ia/",
+                "https://felipe-omena.github.io/nexus-ia/reviews-equipamentos.html",
+                "https://felipe-omena.github.io/nexus-ia/melhores-equipamentos-home-office.html",
+                "https://felipe-omena.github.io/nexus-ia/produto-digital/EBOOK_MESTRE_DOS_PROMPTS_2026.html"
+              ]
+            }' || true

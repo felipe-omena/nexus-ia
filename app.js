@@ -74,6 +74,22 @@ function initDailyRotatingDeals(tagAmazon) {
       </div>
     </div>
   `;
+
+  const seoBadge = document.getElementById("daily-seo-badge");
+  const seoSummary = document.getElementById("daily-seo-summary");
+  const temasDiariosSEO = [
+    "Destaque de Hoje: Ergonomia de Punho (Mouse Vertical 57°) e Prevenção de Fadiga Visual",
+    "Destaque de Hoje: Foco Profundo em Home Office com Cancelamento Ativo de Ruído (ANC)",
+    "Destaque de Hoje: Iluminação Assimétrica de Monitor (Light Bar) para Trabalho Noturno",
+    "Destaque de Hoje: Leitura Técnica Sem Luz Azul (Kindle 11ª Geração) e Método Pomodoro",
+    "Destaque de Hoje: Postura Cervical no Notebook (Suporte em Alumínio + Teclado Sem Fio)"
+  ];
+  if (seoBadge) {
+    seoBadge.textContent = `RADAR DE BUSCAS ATUALIZADO HOJE (${dataFormatada})`;
+  }
+  if (seoSummary) {
+    seoSummary.textContent = `${temasDiariosSEO[diaDoAno % temasDiariosSEO.length]} — Links e análises revisados pela curadoria.`;
+  }
 }
 
 // 1. Diretório de Ferramentas de IA com Filtro e Busca
