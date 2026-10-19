@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://felipe-omena.github.io/nexus-ia/sitemap.xml

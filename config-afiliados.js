@@ -1,28 +1,27 @@
 /**
  * ============================================================================
- * 💰 CENTRAL DE LINKS DE AFILIADOS — NEXUS IA (100% EM CONFORMIDADE LEGAL)
+ * 💰 CENTRAL DE LINKS DE AFILIADOS — NEXUS IA (100% ATIVO E EM CONFORMIDADE)
  * ============================================================================
- * Auditado conforme regras oficiais:
- * - Contrato Operacional Amazon Associados Brasil
- * - Diretrizes de Publicidade do CONAR (Brasil) e FTC
- * - Políticas de Parceiros SaaS (PartnerStack / Impact)
+ * Tag Oficial Amazon Associados Brasil Conectada: nexus00e-20
  */
 
 window.NEXUS_CONFIG = {
+  tagAmazon: "nexus00e-20",
+
   marca: {
     nome: "Nexus IA",
-    slogan: "As Melhores Ferramentas de IA & Automações para Multiplicar seu Tempo",
+    slogan: "As Melhores Ferramentas de IA & Equipamentos para Multiplicar sua Produtividade",
     instagramUrl: "https://instagram.com/",
     tiktokUrl: "https://tiktok.com/",
     youtubeUrl: "https://youtube.com/"
   },
 
   // ==========================================================================
-  // 0. SEU PRODUTO PRÓPRIO (100% DE LUCRO NA KIWIFY / HOTMART / GUMROAD)
+  // 0. SEU PRODUTO PRÓPRIO / GUIA DIGITAL
   // ==========================================================================
   produtoProprio: {
     titulo: "Bíblia da Produtividade IA: +50 Super Prompts Prontos (Edição 2026)",
-    subtitulo: "Copie e cole os comandos exatos usados por especialistas para automatizar trabalho, estudos, criação de conteúdo e vendas.",
+    subtitulo: "Copie e cole os comandos exatos usados por especialistas para automatizar trabalho, estudos, criação de conteúdo e organização.",
     precoDe: "R$ 97,00",
     precoPor: "R$ 19,90",
     linkCheckout: "produto-digital/EBOOK_MESTRE_DOS_PROMPTS_2026.html",
@@ -30,7 +29,7 @@ window.NEXUS_CONFIG = {
   },
 
   // ==========================================================================
-  // 1. FERRAMENTAS DE INTELIGÊNCIA ARTIFICIAL (SaaS - Comissões Recorrentes)
+  // 1. FERRAMENTAS DE INTELIGÊNCIA ARTIFICIAL (SaaS)
   // ==========================================================================
   ferramentasIA: [
     {
@@ -176,9 +175,7 @@ window.NEXUS_CONFIG = {
   ],
 
   // ==========================================================================
-  // 2. VITRINE DE SETUP & PRODUTIVIDADE (Amazon.com.br)
-  // NOTA DE CONFORMIDADE AMAZON: Não exibimos preços estáticos fixos pois a 
-  // Amazon exige que o usuário consulte o preço em tempo real no site oficial.
+  // 2. VITRINE DE SETUP & PRODUTIVIDADE (Amazon.com.br — TAG ATIVA: nexus00e-20)
   // ==========================================================================
   produtosSetup: [
     {
@@ -187,9 +184,9 @@ window.NEXUS_CONFIG = {
       categoria: "Ergonomia Certificada",
       faixaPreco: "Ver preço atualizado na Amazon.com.br",
       descricao: "Projetado para manter o braço e o pulso em posição natural de 57°, reduzindo a tensão muscular durante longas jornadas no computador.",
-      tag: "Alta Avaliação",
+      tag: "Campeão de Vendas",
       icone: "🖱️",
-      linkAfiliado: "https://www.amazon.com.br/s?k=mouse+vertical+ergonomico+sem+fio"
+      linkAfiliado: "https://www.amazon.com.br/s?k=mouse+vertical+ergonomico+sem+fio&tag=nexus00e-20"
     },
     {
       id: "headphone-anc",
@@ -197,9 +194,9 @@ window.NEXUS_CONFIG = {
       categoria: "Foco & Concentração",
       faixaPreco: "Ver preço atualizado na Amazon.com.br",
       descricao: "Reduz ruídos externos do ambiente para aumentar a concentração em estudos, leitura, edição de vídeo e trabalho remoto.",
-      tag: "Recomendado",
+      tag: "Mais Recomendado",
       icone: "🎧",
-      linkAfiliado: "https://www.amazon.com.br/s?k=headphone+cancelamento+de+ruido"
+      linkAfiliado: "https://www.amazon.com.br/s?k=headphone+bluetooth+cancelamento+de+ruido+anc&tag=nexus00e-20"
     },
     {
       id: "lightbar-monitor",
@@ -209,7 +206,7 @@ window.NEXUS_CONFIG = {
       descricao: "Ilumina a bancada de trabalho sem gerar reflexos na tela do monitor, economizando espaço na mesa e reduzindo a fadiga ocular.",
       tag: "Home Office",
       icone: "🖥️",
-      linkAfiliado: "https://www.amazon.com.br/s?k=light+bar+monitor+led"
+      linkAfiliado: "https://www.amazon.com.br/s?k=light+bar+monitor+led&tag=nexus00e-20"
     },
     {
       id: "kindle-11",
@@ -219,7 +216,57 @@ window.NEXUS_CONFIG = {
       descricao: "Tela antirreflexo de alta resolução que simula papel real e bateria de longa duração para leitura técnica e desenvolvimento pessoal.",
       tag: "Original Amazon",
       icone: "📖",
-      linkAfiliado: "https://www.amazon.com.br/s?k=kindle+11+geracao"
+      linkAfiliado: "https://www.amazon.com.br/s?k=kindle+11+geracao&tag=nexus00e-20"
+    },
+    {
+      id: "suporte-notebook",
+      nome: "Suporte Articulado Ergonômico em Alumínio para Notebook",
+      categoria: "Postura & Saúde",
+      faixaPreco: "Ver preço atualizado na Amazon.com.br",
+      descricao: "Eleva a tela do notebook na altura dos olhos para corrigir a postura cervical e melhora a ventilação térmica do equipamento.",
+      tag: "Essencial",
+      icone: "💻",
+      linkAfiliado: "https://www.amazon.com.br/s?k=suporte+notebook+aluminio+ergonomico&tag=nexus00e-20"
+    },
+    {
+      id: "teclado-mecanico",
+      nome: "Teclado Mecânico Sem Fio Compacto (Switch Silencioso)",
+      categoria: "Digitação Rápida",
+      faixaPreco: "Ver preço atualizado na Amazon.com.br",
+      descricao: "Conexão Bluetooth multi-dispositivos e teclas macias de alta precisão para quem escreve, estuda ou programa por várias horas.",
+      tag: "Produtividade",
+      icone: "⌨️",
+      linkAfiliado: "https://www.amazon.com.br/s?k=teclado+mecanico+sem+fio+bluetooth&tag=nexus00e-20"
+    },
+    {
+      id: "cadeira-ergonomica",
+      nome: "Cadeira de Escritório Ergonômica com Apoio Lombar Ajustável",
+      categoria: "Conforto Total",
+      faixaPreco: "Ver preço atualizado na Amazon.com.br",
+      descricao: "Encosto em tela Mesh respirável e suporte lombar projetado para quem trabalha de casa pelo computador todos os dias.",
+      tag: "Ticket Alto 💰",
+      icone: "🪑",
+      linkAfiliado: "https://www.amazon.com.br/s?k=cadeira+ergonomica+escritorio+mesh&tag=nexus00e-20"
+    },
+    {
+      id: "echo-dot-alexa",
+      nome: "Echo Dot com Alexa (Automação de Rotina & Lembretes por Voz)",
+      categoria: "Smart Office",
+      faixaPreco: "Ver preço atualizado na Amazon.com.br",
+      descricao: "Controle alarmes, cronômetros Pomodoro, listas de tarefas, notícias e iluminação do seu escritório apenas com comandos de voz.",
+      tag: "Mais Vendido",
+      icone: "🔊",
+      linkAfiliado: "https://www.amazon.com.br/s?k=echo+dot+alexa&tag=nexus00e-20"
+    },
+    {
+      id: "microfone-usb",
+      nome: "Microfone Condensador USB Profissional para Narração e Reuniões",
+      categoria: "Áudio & Criadores",
+      faixaPreco: "Ver preço atualizado na Amazon.com.br",
+      descricao: "Áudio cristalino plug-and-play com redução de ruído para gravação de vídeos, aulas online, podcasts e chamadas de vídeo.",
+      tag: "Criadores",
+      icone: "🎤",
+      linkAfiliado: "https://www.amazon.com.br/s?k=microfone+condensador+usb+fifine+hyperx&tag=nexus00e-20"
     }
   ],
 
