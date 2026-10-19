@@ -372,7 +372,12 @@ function initSetupShowcase(produtos) {
               <a href="${p.linkMercadoLivre}" target="_blank" rel="noopener noreferrer" class="btn-affiliate" style="padding: 11px 10px; font-size: 0.85rem; background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); color: #0f172a;">
                 💛 Mercado Livre
               </a>
-            </div>`
+            </div>
+            <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(
+              `Olha esse ${p.nome} para Home Office:\n💛 Mercado Livre: ${p.linkMercadoLivre}\n🛒 Amazon: ${p.linkAfiliado}`
+            )}" target="_blank" rel="noopener noreferrer" style="display:block; text-align:center; margin-top:8px; font-size:0.78rem; color:#34d399; text-decoration:none; padding:6px; border-radius:8px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25);">
+              📲 Enviar esta oferta no WhatsApp
+            </a>`
           : `<div style="margin-top: 8px;">
               <a href="${p.linkAfiliado}" target="_blank" rel="noopener noreferrer" class="btn-affiliate">
                 🛒 Ver Oferta na Amazon

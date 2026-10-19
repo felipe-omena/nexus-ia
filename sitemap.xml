@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://felipe-omena.github.io/nexus-ia/reviews-equipamentos.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://felipe-omena.github.io/nexus-ia/produto-digital/EBOOK_MESTRE_DOS_PROMPTS_2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
