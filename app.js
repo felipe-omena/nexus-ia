@@ -363,14 +363,22 @@ function initSetupShowcase(produtos) {
         </div>
         <p class="tool-desc">${p.descricao}</p>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px;">
-        <a href="${p.linkAfiliado}" target="_blank" rel="noopener noreferrer" class="btn-affiliate" style="padding: 11px 10px; font-size: 0.85rem;">
-          🛒 Ver na Amazon
-        </a>
-        <a href="${p.linkMercadoLivre || p.linkAfiliado}" target="_blank" rel="noopener noreferrer" class="btn-affiliate" style="padding: 11px 10px; font-size: 0.85rem; background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); color: #0f172a;">
-          💛 Mercado Livre
-        </a>
-      </div>
+      ${
+        p.linkMercadoLivre
+          ? `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px;">
+              <a href="${p.linkAfiliado}" target="_blank" rel="noopener noreferrer" class="btn-affiliate" style="padding: 11px 10px; font-size: 0.85rem;">
+                🛒 Ver na Amazon
+              </a>
+              <a href="${p.linkMercadoLivre}" target="_blank" rel="noopener noreferrer" class="btn-affiliate" style="padding: 11px 10px; font-size: 0.85rem; background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); color: #0f172a;">
+                💛 Mercado Livre
+              </a>
+            </div>`
+          : `<div style="margin-top: 8px;">
+              <a href="${p.linkAfiliado}" target="_blank" rel="noopener noreferrer" class="btn-affiliate">
+                🛒 Ver Oferta na Amazon
+              </a>
+            </div>`
+      }
     </article>
   `
     )

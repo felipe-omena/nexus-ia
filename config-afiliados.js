@@ -191,7 +191,7 @@ window.NEXUS_CONFIG = {
       icone: "🖱️",
       imagem: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=600&q=80",
       linkAfiliado: "https://www.amazon.com.br/s?k=mouse+vertical+ergonomico+sem+fio&tag=nexus00e-20",
-      linkMercadoLivre: "https://www.mercadolivre.com.br/mouse-vertical-ergonomico-sem-fio-com-aderencia-lateral-variation/p/MLB2074488234"
+      linkMercadoLivre: "https://meli.la/2FfFjJo"
     },
     {
       id: "headphone-anc",
@@ -203,7 +203,7 @@ window.NEXUS_CONFIG = {
       icone: "🎧",
       imagem: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
       linkAfiliado: "https://www.amazon.com.br/s?k=headphone+bluetooth+cancelamento+de+ruido+anc&tag=nexus00e-20",
-      linkMercadoLivre: "https://www.mercadolivre.com.br/headphone-bluetooth-a500-anc-enc-over-ear-69h-bateria-hifi/up/MLBU4174596289"
+      linkMercadoLivre: "https://meli.la/27VaWsg"
     },
     {
       id: "lightbar-monitor",
@@ -215,7 +215,7 @@ window.NEXUS_CONFIG = {
       icone: "🖥️",
       imagem: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&w=600&q=80",
       linkAfiliado: "https://www.amazon.com.br/s?k=light+bar+monitor+led&tag=nexus00e-20",
-      linkMercadoLivre: "https://www.mercadolivre.com.br/luminaria-barra-led-luz-monitor-computador-rgb-mesa-notebook/up/MLBU3088956888"
+      linkMercadoLivre: "https://meli.la/14pbi6E"
     },
     {
       id: "kindle-11",
@@ -227,7 +227,7 @@ window.NEXUS_CONFIG = {
       icone: "📖",
       imagem: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80",
       linkAfiliado: "https://www.amazon.com.br/s?k=kindle+11+geracao&tag=nexus00e-20",
-      linkMercadoLivre: "https://www.mercadolivre.com.br/kindle-11a-geracao-2024-16gb-preto/p/MLB2025722893"
+      linkMercadoLivre: "https://meli.la/2cHzGSZ"
     },
     {
       id: "suporte-notebook",
@@ -239,7 +239,7 @@ window.NEXUS_CONFIG = {
       icone: "💻",
       imagem: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
       linkAfiliado: "https://www.amazon.com.br/s?k=suporte+notebook+aluminio+ergonomico&tag=nexus00e-20",
-      linkMercadoLivre: "https://produto.mercadolivre.com.br/MLB-7607374498-suporte-notebook-aluminio-dobravel-portatil-ajustavel-_JM"
+      linkMercadoLivre: "https://meli.la/247JmCK"
     },
     {
       id: "teclado-mecanico",
@@ -251,19 +251,7 @@ window.NEXUS_CONFIG = {
       icone: "⌨️",
       imagem: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
       linkAfiliado: "https://www.amazon.com.br/s?k=teclado+mecanico+sem+fio+bluetooth&tag=nexus00e-20",
-      linkMercadoLivre: "https://www.mercadolivre.com.br/teclado-numerico-mecanico-rgb-sem-fio-redragon-k733-pro-preto/p/MLB2091430458"
-    },
-    {
-      id: "cadeira-ergonomica",
-      nome: "Cadeira de Escritório Ergonômica com Apoio Lombar Ajustável",
-      categoria: "Conforto Total",
-      faixaPreco: "Oferta Oficial (#Publicidade)",
-      descricao: "Encosto em tela Mesh respirável e suporte lombar projetado para quem trabalha de casa pelo computador todos os dias.",
-      tag: "Ticket Alto 💰",
-      icone: "🪑",
-      imagem: "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=600&q=80",
-      linkAfiliado: "https://www.amazon.com.br/s?k=cadeira+ergonomica+escritorio+mesh&tag=nexus00e-20",
-      linkMercadoLivre: "https://www.mercadolivre.com.br/cadeira-escritorio-ergonomica-sync-mesh-apoio-lombar-nr17-azul-e-grafite/p/MLB67996231"
+      linkMercadoLivre: "https://meli.la/1GPZT6X"
     },
     {
       id: "echo-dot-alexa",
@@ -275,7 +263,19 @@ window.NEXUS_CONFIG = {
       icone: "🔊",
       imagem: "https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=600&q=80",
       linkAfiliado: "https://www.amazon.com.br/s?k=echo+dot+alexa&tag=nexus00e-20",
-      linkMercadoLivre: "https://www.mercadolivre.com.br/amazon-echo-dot-5-geracao-alexa-assistente-virtual-cor-preto/p/MLB29598592"
+      linkMercadoLivre: "https://meli.la/2gAiVAK"
+    },
+    {
+      id: "cadeira-ergonomica",
+      nome: "Cadeira de Escritório Ergonômica com Apoio Lombar Ajustável",
+      categoria: "Conforto Total",
+      faixaPreco: "Oferta Oficial (#Publicidade)",
+      descricao: "Encosto em tela Mesh respirável e suporte lombar projetado para quem trabalha de casa pelo computador todos os dias.",
+      tag: "Ticket Alto 💰",
+      icone: "🪑",
+      imagem: "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=600&q=80",
+      linkAfiliado: "https://www.amazon.com.br/s?k=cadeira+ergonomica+escritorio+mesh&tag=nexus00e-20",
+      linkMercadoLivre: ""
     },
     {
       id: "microfone-usb",
@@ -287,7 +287,7 @@ window.NEXUS_CONFIG = {
       icone: "🎤",
       imagem: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=600&q=80",
       linkAfiliado: "https://www.amazon.com.br/s?k=microfone+condensador+usb+fifine+hyperx&tag=nexus00e-20",
-      linkMercadoLivre: "https://www.mercadolivre.com.br/microfone-fifine-am8-dinamico-para-podcast-streaming-e-jogos-com-usbxlr/p/MLB65919852"
+      linkMercadoLivre: ""
     }
   ],
 
