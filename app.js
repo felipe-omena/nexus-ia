@@ -275,7 +275,7 @@ function initROICalculator(ferramentas) {
   calculate();
 }
 
-// 5. Vitrine Setup & Produtividade (Amazon / Mercado Livre)
+// 5. Vitrine Setup & Produtividade (Amazon + Mercado Livre Lado a Lado)
 function initSetupShowcase(produtos) {
   const setupGrid = document.getElementById("setup-grid");
   if (!setupGrid || !produtos) return;
@@ -293,13 +293,18 @@ function initSetupShowcase(produtos) {
         <div class="tool-meta">
           <span>📦 ${p.categoria}</span>
           <span>•</span>
-          <span>💰 Média: ${p.faixaPreco}</span>
+          <span>💰 ${p.faixaPreco}</span>
         </div>
         <p class="tool-desc">${p.descricao}</p>
       </div>
-      <a href="${p.linkAfiliado}" target="_blank" rel="noopener noreferrer" class="btn-affiliate">
-        Ver Oferta Verificada <span>🛒</span>
-      </a>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px;">
+        <a href="${p.linkAfiliado}" target="_blank" rel="noopener noreferrer" class="btn-affiliate" style="padding: 11px 10px; font-size: 0.85rem;">
+          🛒 Ver na Amazon
+        </a>
+        <a href="${p.linkMercadoLivre || p.linkAfiliado}" target="_blank" rel="noopener noreferrer" class="btn-affiliate" style="padding: 11px 10px; font-size: 0.85rem; background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); color: #0f172a;">
+          💛 Mercado Livre
+        </a>
+      </div>
     </article>
   `
     )
