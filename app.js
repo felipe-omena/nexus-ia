@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * ⚡ MOTOR INTERATIVO — NEXUS IA
+ * ⚡ MOTOR INTERATIVO + ROTACIONADOR AUTOMÁTICO DIÁRIO — NEXUS IA
  * ============================================================================
  */
 
@@ -13,9 +13,68 @@ document.addEventListener("DOMContentLoaded", () => {
   initPromptGenerator(config.ferramentasIA);
   initROICalculator(config.ferramentasIA);
   initSetupShowcase(config.produtosSetup);
+  initDailyRotatingDeals(config.tagAmazon || "nexus00e-20");
   initOwnProductBanner(config.produtoProprio);
   initSEOGuides(config.guiasSEO, config.ferramentasIA);
 });
+
+// Novo: Rotacionador Automático Diário de Ofertas em Alta (Muda sozinho todo dia!)
+function initDailyRotatingDeals(tagAmazon) {
+  const container = document.getElementById("daily-deals-bar");
+  if (!container) return;
+
+  const hoje = new Date();
+  const dataFormatada = hoje.toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  });
+
+  // Catálogo amplo de buscas campeãs de conversão na Amazon Brasil
+  const bancoOfertas = [
+    { nome: "🔥 Ofertas do Dia Amazon", termo: "ofertas+do+dia" },
+    { nome: "⚡ Eletrônicos em Promoção", termo: "eletronicos+promocao" },
+    { nome: "💻 Notebooks Custo-Benefício", termo: "notebook+oferta" },
+    { nome: "🎧 Fones Bluetooth Mais Vendidos", termo: "fone+bluetooth" },
+    { nome: "⌚ Smartwatches em Oferta", termo: "smartwatch" },
+    { nome: "🏠 Casa Inteligente & Alexa", termo: "casa+inteligente+alexa" },
+    { nome: "🖥️ Monitores Home Office & Gamer", termo: "monitor+full+hd+ips" },
+    { nome: "🪑 Cadeiras Ergonômicas", termo: "cadeira+ergonomica" },
+    { nome: "📱 Smartphones em Oferta", termo: "smartphone+oferta" },
+    { nome: "☕ Cafeteiras & Casa", termo: "cafeteira+expresso" },
+    { nome: "🤖 Aspiradores Robô", termo: "aspirador+robo" },
+    { nome: "📚 Livros Mais Vendidos", termo: "livros+mais+vendidos" }
+  ];
+
+  // Seleciona e rotaciona automaticamente com base no dia do ano
+  const diaDoAno = Math.floor((hoje - new Date(hoje.getFullYear(), 0, 0)) / 86400000);
+  const selecionadas = [];
+  for (let i = 0; i < 6; i++) {
+    selecionadas.push(bancoOfertas[(diaDoAno + i) % bancoOfertas.length]);
+  }
+
+  container.innerHTML = `
+    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 14px; padding: 16px 20px; margin-bottom: 24px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+        <span style="font-size:0.85rem; font-weight:700; color:#34d399;">
+          🔄 ATUALIZADO AUTOMATICAMENTE HOJE (${dataFormatada}) • ATALHOS RÁPIDOS DE OFERTAS:
+        </span>
+        <span style="font-size:0.78rem; color:var(--text-muted);">#Publicidade • Amazon.com.br</span>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        ${selecionadas
+          .map(
+            (item) => `
+          <a href="https://www.amazon.com.br/s?k=${item.termo}&tag=${tagAmazon}" target="_blank" rel="noopener noreferrer" class="pill-btn" style="text-decoration:none; color:#f8fafc; background:rgba(255,255,255,0.07);">
+            ${item.nome} ↗
+          </a>
+        `
+          )
+          .join("")}
+      </div>
+    </div>
+  `;
+}
 
 // 1. Diretório de Ferramentas de IA com Filtro e Busca
 function initDirectory(ferramentas) {
@@ -41,7 +100,7 @@ function initDirectory(ferramentas) {
   pillsContainer.addEventListener("click", (e) => {
     const btn = e.target.closest(".pill-btn");
     if (!btn) return;
-    document.querySelectorAll(".pill-btn").forEach((b) => b.classList.remove("active"));
+    document.querySelectorAll("#category-pills .pill-btn").forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
     activeCategory = btn.dataset.cat;
     renderCards();
@@ -107,27 +166,27 @@ function initQuiz(ferramentas) {
   const mapaRecomendacao = {
     videos: {
       ids: ["invideo", "elevenlabs", "opusclip"],
-      titulo: "🎬 Kit Criador de Vídeos Virais (Sem Aparecer)",
+      titulo: "🎬 Kit Criador de Vídeos Educativos (Sem Aparecer)",
       explicacao:
-        "Para criar vídeos no TikTok, Reels e YouTube sem mostrar o rosto, esta é a combinação número 1 do mundo:"
+        "Para criar vídeos no TikTok, Reels e YouTube sem mostrar o rosto, esta é a combinação mais utilizada:"
     },
     estudo: {
       ids: ["gamma", "notion-ai"],
-      titulo: "📊 Kit Produtividade & Estudos 10x Mais Rápidos",
+      titulo: "📊 Kit Produtividade & Estudos Rápidos",
       explicacao:
-        "Para criar apresentações prontas em 1 minuto, resumir PDFs gigantes e organizar toda a sua rotina automaticamente:"
+        "Para criar apresentações prontas em 1 minuto, resumir PDFs e organizar toda a sua rotina:"
     },
     automacao: {
       ids: ["make", "manychat", "writesonic"],
-      titulo: "🤖 Kit Automação & Renda Digital 24h",
+      titulo: "🤖 Kit Automação & Fluxos Digitais",
       explicacao:
-        "Para responder comentários no automático com links, automatizar rotinas e gerar artigos persuasivos:"
+        "Para responder comentários com APIs oficiais, automatizar rotinas e redigir artigos:"
     },
     design: {
       ids: ["leonardo", "heygen"],
-      titulo: "🎨 Kit Estúdio Visual & Avatares Realistas",
+      titulo: "🎨 Kit Estúdio Visual & Avatares",
       explicacao:
-        "Para gerar imagens 4K dignas de cinema e apresentadores virtuais que falam qualquer texto por você:"
+        "Para gerar ilustrações de alta resolução e apresentadores virtuais:"
     }
   };
 
@@ -182,33 +241,33 @@ function initPromptGenerator(ferramentas) {
     roteiro_viral: {
       toolId: "invideo",
       build: (tema, tom) =>
-        `Atue como um roteirista especialista em retenção para TikTok, Reels e YouTube Shorts.\n\nCrie um roteiro altamente hipnótico de 45 segundos sobre o tema: "${tema}".\nTom da narrativa: ${tom}.\n\nSiga exatamente esta estrutura:\n1. GANCHO (0 a 3s): Uma afirmação contraintuitiva ou curiosidade chocante que impeça a pessoa de rolar o feed.\n2. DESENVOLVIMENTO (3 a 35s): Entregue 3 pontos práticos, diretos e visuais, usando frases curtas e ritmo acelerado.\n3. QUEBRA DE PADRÃO (aos 20s): Uma frase que renove a atenção do espectador.\n4. CHAMADA PARA AÇÃO (últimos 5s): Convide o espectador a clicar no link do perfil para acessar a ferramenta completa.\n\nInclua também sugestões de imagens/cenas [entre colchetes] para cada frase.`
+        `Atue como um roteirista especialista em retenção para TikTok, Reels e YouTube Shorts.\n\nCrie um roteiro dinâmico de 45 segundos sobre o tema: "${tema}".\nTom da narrativa: ${tom}.\n\nSiga exatamente esta estrutura:\n1. GANCHO (0 a 3s): Uma pergunta instigante ou curiosidade que prenda a atenção.\n2. DESENVOLVIMENTO (3 a 35s): Entregue 3 pontos práticos, diretos e visuais, usando frases curtas.\n3. QUEBRA DE PADRÃO (aos 20s): Uma frase que renove a atenção do espectador.\n4. CHAMADA PARA AÇÃO (últimos 5s): Convide o espectador a acessar o link do perfil.\n\nInclua também sugestões de imagens/cenas [entre colchetes] para cada frase.`
     },
     apresentacao_slides: {
       toolId: "gamma",
       build: (tema, tom) =>
-        `Atue como um consultor executivo e designer de apresentações de alto impacto.\n\nCrie a estrutura completa de uma apresentação de 8 slides sobre: "${tema}".\nTom de comunicação: ${tom}.\n\nPara cada slide, forneça:\n- Título impactante (máximo 7 palavras)\n- 3 tópicos objetivos (bullet points) com dados ou argumentos claros\n- Sugestão visual de gráfico ou imagem para acompanhar o slide\n- Uma frase de transição para o próximo slide.`
+        `Atue como um consultor executivo e designer de apresentações.\n\nCrie a estrutura completa de uma apresentação de 8 slides sobre: "${tema}".\nTom de comunicação: ${tom}.\n\nPara cada slide, forneça:\n- Título objetivo (máximo 7 palavras)\n- 3 tópicos principais (bullet points) com argumentos claros\n- Sugestão visual de gráfico ou imagem para acompanhar o slide\n- Uma frase de transição para o próximo slide.`
     },
     artigo_seo: {
       toolId: "writesonic",
       build: (tema, tom) =>
-        `Atue como um especialista em Copywriting e SEO para Google.\n\nEscreva um guia completo, escaneável e altamente persuasivo sobre: "${tema}".\nTom de voz: ${tom}.\n\nRequisitos:\n1. Crie 3 opções de títulos magnéticos com alta taxa de clique (CTR).\n2. Use subtítulos H2 e H3 claros.\n3. Inclua uma tabela comparativa prática.\n4. Responda às 4 principais dúvidas frequentes (FAQ) sobre o tema no final.\n5. Adicione chamadas estratégicas para ação (CTA) ao longo do texto.`
+        `Atue como um especialista em Redação e SEO para Google.\n\nEscreva um guia completo, escaneável e informativo sobre: "${tema}".\nTom de voz: ${tom}.\n\nRequisitos:\n1. Crie 3 opções de títulos claros e atrativos.\n2. Use subtítulos H2 e H3 organizados.\n3. Inclua uma tabela resumida.\n4. Responda às 4 principais dúvidas frequentes (FAQ) sobre o tema no final.`
     },
     automacao_produtividade: {
       toolId: "notion-ai",
       build: (tema, tom) =>
-        `Atue como um engenheiro de produtividade e especialista em gestão do tempo.\n\nCrie um plano de ação passo a passo e um sistema de organização semanal para: "${tema}".\nEstilo: ${tom}.\n\nEstruture a resposta com:\n1. As 20% de ações que geram 80% do resultado (Princípio de Pareto).\n2. Checklist diário de execução em menos de 30 minutos.\n3. Quais partes desse processo podem ser automatizadas com ferramentas digitais.\n4. Uma tabela pronta para copiar e colar no Notion.`
+        `Atue como um especialista em gestão do tempo e produtividade.\n\nCrie um plano de ação passo a passo e um sistema de organização semanal para: "${tema}".\nEstilo: ${tom}.\n\nEstruture a resposta com:\n1. As 20% de ações mais importantes que geram 80% do resultado (Princípio de Pareto).\n2. Checklist diário de execução em menos de 30 minutos.\n3. Quais partes desse processo podem ser automatizadas com ferramentas digitais.\n4. Uma tabela pronta para copiar e colar no Notion.`
     },
     imagem_cinematografica: {
       toolId: "leonardo",
       build: (tema, tom) =>
-        `Act as a professional prompt engineer for Midjourney and Leonardo.ai.\n\nCreate 3 ultra-detailed image generation prompts in English based on the concept: "${tema}".\nVisual Mood/Style: ${tom}.\n\nInclude in each prompt:\n- Subject details and composition\n- Lighting (e.g., volumetric lighting, cinematic rim light, golden hour)\n- Camera & Lens specs (e.g., 85mm f/1.4, Unreal Engine 5 render, 8k resolution, photorealistic)\n- Aspect ratio suggestion (--ar 9:16 for Reels/TikTok or --ar 16:9 for YouTube).`
+        `Act as a professional prompt engineer for Leonardo.ai and Midjourney.\n\nCreate 3 detailed image generation prompts in English based on the concept: "${tema}".\nVisual Mood/Style: ${tom}.\n\nInclude in each prompt:\n- Subject details and composition\n- Lighting (e.g., volumetric lighting, studio soft light, golden hour)\n- Camera & Lens specs (e.g., 85mm f/1.4, 8k resolution, photorealistic)\n- Aspect ratio suggestion (--ar 9:16 or --ar 16:9).`
     }
   };
 
   function updatePrompt() {
     const goal = goalSelect.value;
-    const tema = topicInput.value.trim() || "Como ganhar tempo e dinheiro usando Inteligência Artificial";
+    const tema = topicInput.value.trim() || "Como organizar a rotina semanal usando Inteligência Artificial";
     const tom = toneSelect.value;
 
     const item = templates[goal];
@@ -220,7 +279,7 @@ function initPromptGenerator(ferramentas) {
     if (tool) {
       recBanner.innerHTML = `
         <div style="font-size: 0.88rem;">
-          💡 <strong>Dica Pro:</strong> Para executar esse comando com perfeição, recomendamos usar o <strong>${tool.icone} ${tool.nome}</strong> (${tool.beneficioChave}).
+          💡 <strong>Dica Pro:</strong> Para executar esse comando com rapidez, recomendamos usar o <strong>${tool.icone} ${tool.nome}</strong> (${tool.beneficioChave}).
         </div>
         <a href="${tool.linkAfiliado}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 8px 16px; font-size: 0.84rem;">
           Abrir ${tool.nome} Grátis →
@@ -235,13 +294,13 @@ function initPromptGenerator(ferramentas) {
 
   copyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(outputArea.value);
-    showToast("✅ Super Prompt copiado! Agora cole na IA recomendada.");
+    showToast("✅ Super Prompt copiado!");
   });
 
   updatePrompt();
 }
 
-// 4. Calculadora de Economia de Tempo e Dinheiro com IA
+// 4. Calculadora de Economia de Tempo com IA
 function initROICalculator(ferramentas) {
   const hoursInput = document.getElementById("calc-hours");
   const rateInput = document.getElementById("calc-rate");
@@ -293,7 +352,7 @@ function initSetupShowcase(produtos) {
         <div class="tool-meta">
           <span>📦 ${p.categoria}</span>
           <span>•</span>
-          <span>💰 ${p.faixaPreco}</span>
+          <span>🏷️ ${p.faixaPreco}</span>
         </div>
         <p class="tool-desc">${p.descricao}</p>
       </div>
@@ -319,12 +378,12 @@ function initOwnProductBanner(produto) {
   container.innerHTML = `
     <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.24), rgba(6, 182, 212, 0.2)); border: 1px solid var(--border-glow); border-radius: var(--radius-lg); padding: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; box-shadow: var(--shadow-glow);">
       <div style="max-width: 680px;">
-        <span class="badge-featured" style="display:inline-block; margin-bottom:10px;">📘 GUIA OFICIAL NEXUS IA • DOWNLOAD IMEDIATO</span>
+        <span class="badge-featured" style="display:inline-block; margin-bottom:10px;">📘 GUIA OFICIAL NEXUS IA • ACESSO IMEDIATO</span>
         <h2 style="font-size: 1.7rem; margin-bottom: 8px;">${produto.titulo}</h2>
         <p style="color: #cbd5e1; margin-bottom: 14px;">${produto.subtitulo}</p>
         <div style="display:flex; align-items:center; gap: 12px; font-size: 0.95rem;">
           <span style="text-decoration: line-through; color: var(--text-muted);">De ${produto.precoDe}</span>
-          <strong style="color: #34d399; font-size: 1.25rem;">Por ${produto.precoPor} (ou Acesso VIP Hoje)</strong>
+          <strong style="color: #34d399; font-size: 1.25rem;">Por ${produto.precoPor} (Acesso Gratuito Liberado Hoje)</strong>
         </div>
       </div>
       <div>
@@ -336,7 +395,7 @@ function initOwnProductBanner(produto) {
   `;
 }
 
-// 7. Guias Rápidos de SEO (Atração de Tráfego do Google)
+// 7. Guias Rápidos de SEO
 function initSEOGuides(guias, ferramentas) {
   const container = document.getElementById("seo-guides-grid");
   if (!container || !guias) return;

@@ -8,7 +8,8 @@
 
 window.NEXUS_CONFIG = {
   tagAmazon: "nexus00e-20",
-  idMercadoLivre: "", // Quando criar conta no ML Afiliados, colocamos seus links curtos (meli.la / sec) aqui!
+  idMercadoLivre: "omfe710549",
+  perfilSocialMercadoLivre: "https://www.mercadolivre.com.br/social/omfe710549",
 
   marca: {
     nome: "Nexus IA",
