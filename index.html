@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus IA — Central de Ferramentas de Inteligência Artificial & Produtividade</title>
+  <meta name="description" content="Descubra as melhores ferramentas de Inteligência Artificial, gere Super Prompts profissionais gratuitamente e automatize seu trabalho em minutos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Barra de Navegação -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-icon">⚡</span>
+        <span>Nexus <span class="gradient-text">IA</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#quiz">Descobrir IA</a></li>
+        <li><a href="#gerador-prompts">Gerador de Prompts</a></li>
+        <li><a href="#diretorio">Melhores IAs</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="#setup">Setup Home Office</a></li>
+      </ul>
+      <a href="#gerador-prompts" class="btn-nav">Usar Gerador Grátis ✨</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span>🚀 Atualizado 2026 • Curadoria Oficial das Melhores IAs</span>
+      </div>
+      <h1>
+        Faça o Trabalho de <span class="gradient-text">8 Horas em 15 Minutos</span> com as IAs Certas
+      </h1>
+      <p>
+        Explore nosso diretório curado das melhores Inteligências Artificiais do mundo, gere comandos profissionais em 1 clique e coloque sua rotina no piloto automático.
+      </p>
+      <div class="hero-actions">
+        <a href="#diretorio" class="btn-primary">Explorar Melhores IAs →</a>
+        <a href="#gerador-prompts" class="btn-secondary">🪄 Gerador de Super Prompts</a>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <strong>+15h/sem</strong>
+          <span>Economizadas em média</span>
+        </div>
+        <div class="stat-item">
+          <strong>100% Grátis</strong>
+          <span>Para testar as ferramentas</span>
+        </div>
+        <div class="stat-item">
+          <strong>+30 IAs</strong>
+          <span>Testadas e aprovadas</span>
+        </div>
+        <div class="stat-item">
+          <strong>1 Clique</strong>
+          <span>Para copiar Super Prompts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz Interativo: Recomendador de IA -->
+  <section id="quiz">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">RECOMENDAÇÃO INTELIGENTE</span>
+        <h2>Qual é o seu objetivo principal hoje?</h2>
+        <p>Clique na opção abaixo e descubra exatamente quais ferramentas resolvem isso para você em minutos:</p>
+      </div>
+
+      <div class="quiz-box">
+        <div class="quiz-options">
+          <button class="quiz-option-btn" data-goal="videos">
+            <span>🎬</span>
+            <span>Criar vídeos virais (TikTok/YouTube) sem aparecer</span>
+          </button>
+          <button class="quiz-option-btn" data-goal="estudo">
+            <span>📊</span>
+            <span>Criar slides, resumos e organizar estudos/trabalho</span>
+          </button>
+          <button class="quiz-option-btn" data-goal="automacao">
+            <span>🤖</span>
+            <span>Automatizar tarefas repetitivas e ganhar dinheiro</span>
+          </button>
+          <button class="quiz-option-btn" data-goal="design">
+            <span>🎨</span>
+            <span>Gerar imagens 4K e avatares ultra-realistas</span>
+          </button>
+        </div>
+
+        <div id="quiz-result" class="quiz-result"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Micro-Ferramenta Gratuita: Gerador de Super Prompts -->
+  <section id="gerador-prompts">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FERRAMENTA GRATUITA INTEGRADA</span>
+        <h2>🪄 Gerador de Super Prompts Profissionais</h2>
+        <p>Não sabe como pedir para a IA? Escolha seu objetivo abaixo e copie um comando estruturado por especialistas.</p>
+      </div>
+
+      <div class="tool-grid">
+        <div>
+          <div class="form-group">
+            <label for="prompt-goal">1. O que você deseja criar?</label>
+            <select id="prompt-goal" class="form-control">
+              <option value="roteiro_viral">🎬 Roteiro Viral para TikTok / Reels / Shorts</option>
+              <option value="apresentacao_slides">📊 Apresentação de Slides Completa em 1 Minuto</option>
+              <option value="artigo_seo">✍️ Artigo ou Página de Vendas Persuasiva</option>
+              <option value="automacao_produtividade">🧠 Plano de Produtividade e Automação Semanal</option>
+              <option value="imagem_cinematografica">🎨 Prompt de Imagem Cinematográfica 8K</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="prompt-topic">2. Sobre qual assunto ou nicho?</label>
+            <input
+              type="text"
+              id="prompt-topic"
+              class="form-control"
+              placeholder="Ex: 5 hábitos financeiros, Inteligência Artificial, Marketing..."
+              value="3 segredos da Inteligência Artificial que economizam horas de trabalho"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="prompt-tone">3. Qual o estilo/tom desejado?</label>
+            <select id="prompt-tone" class="form-control">
+              <option value="Direto, magnético e altamente envolvente">🔥 Magnético, curioso e dinâmico (Ideal para Redes Sociais)</option>
+              <option value="Profissional, executivo e baseado em dados">💼 Profissional, executivo e direto ao ponto</option>
+              <option value="Didático, simples e passo a passo para iniciantes">🎓 Didático e fácil de entender</option>
+              <option value="Cinematográfico, dramático e misterioso">🎭 Cinematográfico e impactante (Estilo Canal Dark)</option>
+            </select>
+          </div>
+
+          <button id="btn-generate-prompt" class="btn-primary" style="width: 100%; justify-content: center;">
+            ⚡ Gerar Super Prompt Agora
+          </button>
+        </div>
+
+        <div class="prompt-output-card">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="font-size:0.82rem; font-weight:700; color:var(--accent);">SEU COMANDO PRONTO PARA COPIAR:</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">Funciona em ChatGPT, Claude, Gemini e IAs dedicadas</span>
+            </div>
+            <textarea id="prompt-output" class="prompt-textarea" readonly></textarea>
+          </div>
+
+          <div>
+            <div class="prompt-actions">
+              <span style="font-size: 0.84rem; color: var(--text-muted);">Copie o comando acima e cole na ferramenta:</span>
+              <button id="btn-copy-prompt" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+                📋 Copiar Prompt
+              </button>
+            </div>
+            <div id="prompt-ai-rec" class="recommended-ai-banner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diretório Curado de Ferramentas de IA -->
+  <section id="diretorio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">DIRETÓRIO OFICIAL</span>
+        <h2>🏆 As Melhores Ferramentas de IA de 2026</h2>
+        <p>Filtre por categoria e acesse diretamente os links oficiais com testes gratuitos ativados.</p>
+      </div>
+
+      <div class="filter-bar">
+        <div id="category-pills" class="category-pills"></div>
+        <input
+          type="search"
+          id="tool-search"
+          class="search-input"
+          placeholder="🔍 Buscar ferramenta ou função..."
+        />
+      </div>
+
+      <div id="tools-grid" class="cards-grid"></div>
+    </div>
+  </section>
+
+  <!-- Banner do Produto Próprio (E-book Low Ticket / Isca Digital) -->
+  <section id="ebook-oficial">
+    <div class="container">
+      <div id="own-product-banner"></div>
+    </div>
+  </section>
+
+  <!-- Calculadora de Economia de Tempo e Dinheiro -->
+  <section id="calculadora">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CALCULADORA INTERATIVA</span>
+        <h2>Quanto Tempo e Dinheiro Você Economiza com IA?</h2>
+        <p>Descubra o impacto financeiro de automatizar tarefas repetitivas no seu computador.</p>
+      </div>
+
+      <div class="calc-box">
+        <div>
+          <div class="form-group" style="margin-bottom: 24px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <label for="calc-hours">Horas gastas por dia em tarefas repetitivas no PC:</label>
+              <strong id="hours-val" style="color: var(--accent);">3h / dia</strong>
+            </div>
+            <input type="range" id="calc-hours" min="1" max="8" step="0.5" value="3" style="width:100%; accent-color: var(--primary);" />
+          </div>
+
+          <div class="form-group">
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <label for="calc-rate">Quanto vale a sua hora de trabalho (ou meta):</label>
+              <strong id="rate-val" style="color: var(--accent);">R$ 40 / hora</strong>
+            </div>
+            <input type="range" id="calc-rate" min="15" max="200" step="5" value="40" style="width:100%; accent-color: var(--primary);" />
+          </div>
+
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 14px;">
+            *Cálculo baseado na redução média de 70% do tempo operacional ao utilizar automações no-code e assistentes de IA.
+          </p>
+        </div>
+
+        <div class="calc-result-panel">
+          <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #cbd5e1;">Você pode recuperar até:</span>
+          <div id="saved-hours" class="calc-big-number">46 horas livres/mês</div>
+          <p style="font-size: 1.05rem; margin-bottom: 18px; color: #f8fafc;">
+            Equivalente a <strong id="saved-money" style="color: #67e8f9;">R$ 22.080 / ano</strong> em produtividade
+          </p>
+          <a id="calc-cta-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width:100%; justify-content:center;">
+            🤖 Automatizar Minha Rotina Agora →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guias Rápidos de SEO -->
+  <section id="guias">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">GUIAS PRÁTICOS</span>
+        <h2>⚡ Tutoriais Rápidos de Automação</h2>
+        <p>Combinações prontas de ferramentas para multiplicar resultados sem aparecer.</p>
+      </div>
+      <div id="seo-guides-grid" class="cards-grid"></div>
+    </div>
+  </section>
+
+  <!-- Vitrine de Setup & Produtividade -->
+  <section id="setup">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TRABALHE DE CASA COM CONFORTO</span>
+        <h2>💻 Setup Essencial de Alta Produtividade</h2>
+        <p>Equipamentos ergonômicos com melhor custo-benefício para quem passa horas no computador.</p>
+      </div>
+
+      <div id="setup-grid" class="cards-grid"></div>
+    </div>
+  </section>
+
+  <!-- Toast de Notificação -->
+  <div id="toast" class="toast">✅ Copiado com sucesso!</div>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 8px; font-weight: 700; color: var(--text-main);">⚡ Nexus IA — Inteligência Artificial & Produtividade</p>
+      <p>Alguns links desta página são links de parceiros oficiais. Você não paga nada a mais por isso e apoia a manutenção das nossas ferramentas gratuitas.</p>
+    </div>
+  </footer>
+
+  <script src="config-afiliados.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

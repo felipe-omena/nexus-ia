@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📘 Bíblia da Produtividade IA — Guia Oficial de Super Prompts (Edição 2026)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #131b2e;
+      --border: #26334d;
+      --primary: #8b5cf6;
+      --accent: #06b6d4;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 30px 16px 80px;
+    }
+    .ebook-wrapper {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding: 14px 20px;
+      background: rgba(139, 92, 246, 0.14);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      border-radius: 12px;
+    }
+    .btn-print {
+      background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .cover {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 60%, #083344 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 56px 36px;
+      text-align: center;
+      margin-bottom: 36px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    }
+    .cover-tag {
+      display: inline-block;
+      background: rgba(6, 182, 212, 0.2);
+      color: #67e8f9;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .cover h1 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 850;
+      line-height: 1.18;
+      margin-bottom: 16px;
+    }
+    .cover p {
+      color: #cbd5e1;
+      font-size: 1.08rem;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .chapter {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 28px;
+    }
+    .chapter-num {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .chapter h2 {
+      font-size: 1.5rem;
+      margin: 6px 0 14px;
+    }
+    .prompt-box {
+      background: #070a12;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 14px 0;
+      font-family: 'Consolas', monospace;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+    }
+    .tool-rec {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tool-rec a {
+      background: #10b981;
+      color: #052e16;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+    }
+    @media print {
+      body { background: #fff; color: #111; padding: 0; }
+      .top-bar { display: none; }
+      .cover, .chapter { border: 1px solid #ccc; box-shadow: none; background: #fff; color: #111; page-break-inside: avoid; }
+      .cover h1, .cover p, .chapter h2 { color: #111; }
+      .prompt-box { background: #f8fafc; color: #0f172a; border: 1px solid #cbd5e1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ebook-wrapper">
+
+    <!-- Barra de Ação (Oculta ao salvar em PDF) -->
+    <div class="top-bar">
+      <div>
+        <strong>📘 Produto Digital Pronto!</strong>
+        <span style="font-size: 0.88rem; color: #cbd5e1; display:block;">Clique ao lado para salvar em PDF e vender na Kiwify/Hotmart (100% de lucro) ou entregar como bônus.</span>
+      </div>
+      <button class="btn-print" onclick="window.print()">🖨️ Salvar como PDF Pronto</button>
+    </div>
+
+    <!-- Capa do E-book -->
+    <div class="cover">
+      <span class="cover-tag">EDIÇÃO OFICIAL • NEXUS IA</span>
+      <h1>Bíblia da Produtividade com IA: Os Super Prompts que Economizam 15h por Semana</h1>
+      <p>O manual definitivo de comandos prontos (Copy & Paste) e ferramentas de automação para multiplicar sua produtividade e criar fontes de renda digital sem aparecer.</p>
+    </div>
+
+    <!-- Capítulo 1 -->
+    <section class="chapter">
+      <span class="chapter-num">MÓDULO 01 • A FÓRMULA MESTRE</span>
+      <h2>A Anatomia de um Prompt de Alta Performance</h2>
+      <p>95% dos usuários pedem coisas vagas como <em>"escreva um texto sobre finanças"</em> e recebem respostas robóticas. Para extrair trabalho de nível sênior de qualquer Inteligência Artificial, use sempre os 4 Pilares:</p>
+      <ul style="margin: 12px 0 12px 22px; color: #cbd5e1;">
+        <li><strong>1. Papel (Persona):</strong> Quem a IA deve incorporar (ex: Copywriter Sênior, Roteirista de Retenção, Consultor Financeiro).</li>
+        <li><strong>2. Tarefa + Contexto:</strong> O que precisa ser feito e para qual público-alvo.</li>
+        <li><strong>3. Restrições:</strong> O que evitar (ex: sem jargões difíceis, frases curtas, máximo de 150 palavras).</li>
+        <li><strong>4. Formato de Saída:</strong> Tabela, checklist passo a passo, código ou roteiro cronometrado.</li>
+      </ul>
+    </section>
+
+    <!-- Capítulo 2 -->
+    <section class="chapter">
+      <span class="chapter-num">MÓDULO 02 • CANAIS DARK & VÍDEOS VIRAIS</span>
+      <h2>Prompts Prontos para Criar Vídeos Sem Aparecer</h2>
+      <p>Copie e cole os comandos abaixo para gerar roteiros magnéticos para TikTok, Reels e YouTube Shorts:</p>
+
+      <strong>Prompt #1 — Roteiro de Curiosidades com Retenção de 85%+</strong>
+      <div class="prompt-box">Atue como um roteirista especialista em vídeos curtos virais (TikTok, Reels e Shorts). Crie um roteiro de 45 segundos sobre [SEU TEMA AQUI].
+Estrutura obrigatória:
+- 0 a 3s (Gancho): Comece com uma pergunta chocante ou segredo pouco conhecido.
+- 3 a 35s (Corpo): Entregue 3 fatos rápidos sem enrolação, usando linguagem simples e direta.
+- 35 a 45s (CTA + Loop): Faça uma chamada para o link da bio e termine com uma frase que se conecte ao início do vídeo.
+Adicione sugestões visuais [entre colchetes] para cada linha.</div>
+
+      <strong>Prompt #2 — Transformar 1 Ideia em 7 Vídeos para a Semana Inteira</strong>
+      <div class="prompt-box">Atue como um estrategista de conteúdo para canais Dark. Preciso de um calendário de 7 vídeos curtos sobre o nicho [SEU NICHO].
+Apresente em formato de TABELA contendo:
+1. Dia da Semana
+2. Gancho dos primeiros 3 segundos
+3. Resumo do conteúdo prático
+4. Ferramenta ou produto para recomendar no final.</div>
+
+      <div class="tool-rec">
+        <span>🎬 <strong>Ferramenta Recomendada:</strong> Gere o vídeo inteiro e a voz realista automaticamente:</span>
+        <a id="ebook-link-invideo" href="https://invideo.io" target="_blank">Testar InVideo AI + ElevenLabs →</a>
+      </div>
+    </section>
+
+    <!-- Capítulo 3 -->
+    <section class="chapter">
+      <span class="chapter-num">MÓDULO 03 • TRABALHO, ESTUDOS E APRESENTAÇÕES</span>
+      <h2>Como Fazer Trabalhos de 4 Horas em 5 Minutos</h2>
+      <p>Use estes comandos para resumir documentos extensos, criar apresentações executivas e organizar projetos:</p>
+
+      <strong>Prompt #3 — Estruturador de Apresentação de Alto Impacto</strong>
+      <div class="prompt-box">Atue como um consultor executivo da McKinsey. Crie uma estrutura de apresentação de 8 slides sobre [TEMA DO PROJETO/TRABALHO].
+Para cada slide, escreva:
+- Título curto e orientado a conclusão
+- 3 tópicos principais com dados ou argumentos lógicos
+- Sugestão de elemento visual ou gráfico.</div>
+
+      <strong>Prompt #4 — Resumo Inteligente de Livros e PDFs (Princípio 80/20)</strong>
+      <div class="prompt-box">Extraia os 20% de conceitos mais importantes sobre [NOME DO LIVRO OU ASSUNTO] que geram 80% dos resultados práticos.
+Entregue:
+1. As 5 lições centrais explicadas de forma simples
+2. Um plano de aplicação imediata em 3 passos para usar hoje mesmo.</div>
+
+      <div class="tool-rec">
+        <span>📊 <strong>Ferramenta Recomendada:</strong> Crie slides prontos em 1 minuto sem PowerPoint:</span>
+        <a id="ebook-link-gamma" href="https://gamma.app" target="_blank">Acessar Gamma App Grátis →</a>
+      </div>
+    </section>
+
+    <!-- Capítulo 4 -->
+    <section class="chapter">
+      <span class="chapter-num">MÓDULO 04 • VENDAS AUTOMÁTICAS E COPYWRITING</span>
+      <h2>Prompts para Vender Todos os Dias Sem Conversar com Ninguém</h2>
+      <p>Comandos desenhados para criar páginas, descrições de produtos e sequências automáticas que convertem visitantes em comissões:</p>
+
+      <strong>Prompt #5 — Descrição Magnética para Produto de Afiliado</strong>
+      <div class="prompt-box">Atue como um Copywriter especialista em conversão direta. Escreva 3 variações de posts curtos para recomendar a ferramenta/produto [NOME DO PRODUTO].
+Use a estrutura PAS:
+- Problema: A dor que a pessoa sente hoje (perda de tempo/dinheiro)
+- Agitação: O custo de continuar fazendo do jeito antigo
+- Solução: Como o [NOME DO PRODUTO] resolve isso em minutos + Chamada para clicar no link da bio.</div>
+
+      <div class="tool-rec">
+        <span>🤖 <strong>Ferramenta Recomendada:</strong> Automatize respostas e envio de links no Direct:</span>
+        <a id="ebook-link-make" href="https://make.com" target="_blank">Conhecer Make & ManyChat →</a>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="../config-afiliados.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!window.NEXUS_CONFIG) return;
+      const tools = window.NEXUS_CONFIG.ferramentasIA || [];
+      const invideo = tools.find(t => t.id === "invideo");
+      const gamma = tools.find(t => t.id === "gamma");
+      const make = tools.find(t => t.id === "make");
+
+      if (invideo) document.getElementById("ebook-link-invideo").href = invideo.linkAfiliado;
+      if (gamma) document.getElementById("ebook-link-gamma").href = gamma.linkAfiliado;
+      if (make) document.getElementById("ebook-link-make").href = make.linkAfiliado;
+    });
+  </script>
+</body>
+</html>
