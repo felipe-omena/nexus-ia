@@ -272,4 +272,96 @@ document.addEventListener("DOMContentLoaded", () => {
     btnTrabCalc.addEventListener("click", calcularTrabalhista);
     calcularTrabalhista();
   }
+
+  // 8. Gerador de Contrato de Prestação de Serviços
+  const btnConGerar = document.getElementById("btn-con-gerar");
+  if (btnConGerar) {
+    btnConGerar.addEventListener("click", () => {
+      const contratante = esc(document.getElementById("con-contratante").value.trim() || "NOME DO CONTRATANTE");
+      const contratado = esc(document.getElementById("con-contratado").value.trim() || "NOME DO CONTRATADO");
+      const valor = esc(document.getElementById("con-valor").value.trim() || "Valor e condições a combinar");
+      const foro = esc(document.getElementById("con-foro").value.trim() || "Prazo a combinar • Foro local");
+      const objeto = esc(
+        document.getElementById("con-objeto").value.trim() ||
+          "Prestação de serviços profissionais conforme especificações técnicas acordadas entre as partes."
+      ).replace(/\n/g, "<br>");
+
+      printableArea.innerHTML = `
+        <div style="border: 2px solid #0f172a; padding: 30px; border-radius: 8px; line-height: 1.75;">
+          <h2 style="text-align:center; font-size: 1.45rem; border-bottom: 2px solid #0f172a; padding-bottom: 12px; margin-bottom: 20px;">
+            CONTRATO PARTICULAR DE PRESTAÇÃO DE SERVIÇOS
+          </h2>
+          <p style="margin-bottom: 14px;"><strong>1. DAS PARTES:</strong><br>
+          <strong>CONTRATANTE:</strong> ${contratante}<br>
+          <strong>CONTRATADO(A):</strong> ${contratado}</p>
+
+          <p style="margin-bottom: 14px;"><strong>2. DO OBJETO DO CONTRATO:</strong><br>
+          O presente instrumento tem como objeto a prestação dos seguintes serviços pelo(a) CONTRATADO(A):<br>
+          ${objeto}</p>
+
+          <p style="margin-bottom: 14px;"><strong>3. DO VALOR E FORMA DE PAGAMENTO:</strong><br>
+          Pelos serviços prestados, o(a) CONTRATANTE pagará ao(à) CONTRATADO(A) a quantia de: <strong>${valor}</strong>.</p>
+
+          <p style="margin-bottom: 28px;"><strong>4. DO PRAZO E DO FORO:</strong><br>
+          Condições de prazo e foro eleito pelas partes: <strong>${foro}</strong>. Data de assinatura: ${hojeStr}.</p>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 28px; text-align:center; margin-top: 40px;">
+            <div>
+              <p>_______________________________________</p>
+              <strong>${contratante}</strong><br><span style="font-size:0.82rem;">Contratante</span>
+            </div>
+            <div>
+              <p>_______________________________________</p>
+              <strong>${contratado}</strong><br><span style="font-size:0.82rem;">Contratado(a)</span>
+            </div>
+          </div>
+        </div>
+      `;
+      printableWrapper.style.display = "block";
+      printableWrapper.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  // 9. Calculadora de Juros Compostos & Renda Passiva
+  function calcularJuros() {
+    const ini = Math.max(0, parseFloat(document.getElementById("jur-inicial").value) || 0);
+    const men = Math.max(0, parseFloat(document.getElementById("jur-mensal").value) || 0);
+    const taxa = Math.max(0.01, parseFloat(document.getElementById("jur-taxa").value) || 0.95) / 100;
+    const anos = Math.min(50, Math.max(1, parseInt(document.getElementById("jur-anos").value) || 5));
+    const meses = anos * 12;
+
+    const montante = ini * Math.pow(1 + taxa, meses) + men * ((Math.pow(1 + taxa, meses) - 1) / taxa);
+    const totalInvestido = ini + men * meses;
+    const totalJuros = montante - totalInvestido;
+    const rendaMensalPassiva = montante * taxa;
+
+    const fmt = (n) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    const box = document.getElementById("jur-resultado");
+    if (box) {
+      box.innerHTML = `
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px;">
+          <div style="background:rgba(255,255,255,0.04); padding:14px; border-radius:10px;">
+            <span style="font-size:0.82rem; color:#94a3b8;">Patrimônio Final Acumulado:</span>
+            <strong style="display:block; font-size:1.35rem; color:#34d399; margin-top:4px;">${fmt(montante)}</strong>
+            <span style="font-size:0.78rem; color:#cbd5e1;">Total investido do bolso: ${fmt(totalInvestido)}</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); padding:14px; border-radius:10px;">
+            <span style="font-size:0.82rem; color:#94a3b8;">Lucro Só de Juros Compostos:</span>
+            <strong style="display:block; font-size:1.35rem; color:#67e8f9; margin-top:4px;">+${fmt(totalJuros)}</strong>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); padding:14px; border-radius:10px;">
+            <span style="font-size:0.82rem; color:#94a3b8;">Renda Passiva Mensal Gerada:</span>
+            <strong style="display:block; font-size:1.35rem; color:#fde047; margin-top:4px;">${fmt(rendaMensalPassiva)} / mês</strong>
+            <span style="font-size:0.78rem; color:#cbd5e1;">Sem mexer no valor principal!</span>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  const btnJurCalc = document.getElementById("btn-jur-calc");
+  if (btnJurCalc) {
+    btnJurCalc.addEventListener("click", calcularJuros);
+    calcularJuros();
+  }
 });
